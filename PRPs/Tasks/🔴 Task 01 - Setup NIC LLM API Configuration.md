@@ -39,6 +39,20 @@ The NIC LLM API configuration is the foundational integration that enables NIC C
 4. Create model configuration management for dynamic parameter adjustment and optimization
 5. Implement health check and service availability monitoring for NIC LLM endpoint
 
+### NIC LLM Parameters
+
+**NIC LLM:**
+<https://n8n.codrstudio.dev/webhook/nic/v1/models>
+
+**QDrant:**
+<https://qdrant.codrstudio.dev>
+
+**Postgres:**
+<https://sql.codrstudio.dev>
+
+**GitLab:**
+<https://gitlab.codrstudio.dev>
+
 ### Files to Modify/Create
 
 - **Create**: `backend/open_webui/clients/nic_llm.py` - NIC LLM API client implementation
