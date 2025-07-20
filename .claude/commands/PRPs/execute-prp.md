@@ -1,46 +1,100 @@
 # Execute DTF Task
 
-Implement a task using the DTF task file and its assembled context.
+Implement a task using the DTF task file and its assembled context following the framework's context assembly rules.
 
-**REQUIRED READING BEFORE STARTING:**
+## Required Reading Before Starting
 
-- Read `PRPs/Domains/System Architecture.md` to understand context assembly rules and link traversal
-- Read `PRPs/README.md` to understand file structure and conventions
+- **[[PRPs/System/PRP System.md]]** - Framework overview and workflow
+- **[[PRPs/System/Methodology.md]]** - Context assembly algorithm and examples
+- **[[PRPs/System/Linking System.md]]** - Link traversal rules and depth limits
+- **[[PRPs/System/Management Guidelines.md]]** - Status updates and validation procedures
 
 ## Task File: $ARGUMENTS
 
 ## Execution Process
 
-1. **Load Task Context**
-   - Read the specified task file
-   - Follow frontmatter links (`up`, `feature`, `dependencies`, `related`) to assemble complete context
-   - Understand all context and requirements from task and linked domains/features
-   - Follow all instructions and extend the research if needed
-   - Ensure you have all needed context to implement the task fully
-   - Do more web searches and codebase exploration as needed
+### 1. Context Assembly
 
-2. **ULTRATHINK**
-   - Think hard before you execute the plan. Create a comprehensive plan addressing all requirements.
-   - Break down complex tasks into smaller, manageable steps using your todos tools.
-   - Use the TodoWrite tool to create and track your implementation plan.
-   - Identify implementation patterns from existing code and linked domains to follow.
+- Read the specified task file and extract frontmatter links
+- Follow link traversal rules per [[System/Linking System.md]]:
+  - `dependencies`: Follow to depth 3
+  - `up`: Follow complete chain to root
+  - `related`: Follow to depth 1
+  - `feature`: Include complete content
+- Load all linked domains, features, and related tasks
+- Assemble complete implementation context in dependency order
 
-3. **Execute the plan**
-   - Execute the task implementation
-   - Implement all the code
+### 2. Planning Phase
 
-4. **Validate**
-   - Run each validation command from task file
-   - Fix any failures
-   - Re-run until all pass
+**ULTRATHINK** before execution:
 
-5. **Complete**
-   - Ensure all acceptance criteria done
-   - Run final validation suite
-   - Report completion status
-   - Read the task file again to ensure you have implemented everything
+- Analyze all assembled context and requirements
+- Create comprehensive implementation plan addressing all criteria
+- Break down complex tasks into manageable steps using todos tools
+- Identify implementation patterns from linked domains
+- Use TodoWrite tool to create and track implementation plan
+- Extend research with web searches and codebase exploration as needed
 
-6. **Reference the Context**
-   - You can always reference the task file and linked domains again if needed
+### 3. Status Management
 
-Note: If validation fails, use error patterns from linked domains and task acceptance criteria to fix and retry.
+Update task status following [[System/Management Guidelines.md]]:
+
+```yaml
+status: 🟡 in-progress  # Update when starting implementation
+```
+
+### 4. Implementation
+
+- Execute the planned implementation
+- Follow patterns and approaches from linked domain files
+- Reference feature context for scope and acceptance criteria
+- Implement all required functionality per task specifications
+
+### 5. Validation
+
+- Run each validation command specified in task file
+- Execute acceptance criteria tests
+- Fix any failures using error patterns from linked domains
+- Re-run validation until all tests pass
+- Cross-reference with feature requirements
+
+### 6. Completion
+
+- Verify all acceptance criteria met
+- Run final validation suite
+- Update task status:
+
+```yaml
+status: 🟢 done        # Mark as completed
+updated: 2025-01-20    # Update timestamp
+```
+
+- Report completion status with summary
+
+## Context Re-Assembly
+
+If additional context needed during implementation:
+
+- Reference the original task file and linked domains
+- Follow link chains again for updated information
+- Maintain awareness of complete context assembly throughout process
+
+## Error Handling
+
+When validation fails:
+
+- Consult error handling patterns from linked domains
+- Review task acceptance criteria for specific requirements
+- Use related task files for implementation guidance
+- Retry with corrected approach
+
+## Success Criteria
+
+Task implementation is complete when:
+
+- [ ] All acceptance criteria from task file met
+- [ ] All validation commands pass
+- [ ] Implementation follows patterns from linked domains
+- [ ] Feature requirements satisfied
+- [ ] Task status updated to 🟢 done
+- [ ] Final validation suite passes
