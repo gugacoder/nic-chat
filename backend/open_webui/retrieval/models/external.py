@@ -16,7 +16,7 @@ class ExternalReranker(BaseReranker):
     def __init__(
         self,
         api_key: str,
-        url: str = "http://localhost:8080/v1/rerank",
+        url: str = "http://localhost:8000/v1/rerank",
         model: str = "reranker",
     ):
         self.api_key = api_key

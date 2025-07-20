@@ -17,7 +17,7 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://grafana:4317 
       - OTEL_SERVICE_NAME=open-webui
     ports:
-      - "8088:8080"
+      - "8088:8000"
     networks: [default]
 
 networks:

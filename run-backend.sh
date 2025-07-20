@@ -18,5 +18,5 @@ echo "Installing dependencies from requirements.txt..."
 pip install -r requirements.txt
 
 # Run the development server
-echo "Starting backend server on port 8000..."
+echo "Starting backend server..."
 ./dev.sh
