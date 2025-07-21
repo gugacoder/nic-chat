@@ -15,6 +15,8 @@ Generate comprehensive DTF (Domains-Tasks-Features) documentation from initial s
 
 Read the specification file ($ARGUMENTS) first to understand what needs to be created, which domains are involved, and what features/tasks need to be implemented. The implementing AI will only get the context you create in the DTF files and their frontmatter links.
 
+"If the $ARGUMENTS is omitted, the default file to be used should be PRPs/PROMPT.md."
+
 ### Research Phase
 
 - Explore existing codebase for patterns and conventions

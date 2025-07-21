@@ -1815,6 +1815,24 @@ async def healthcheck_with_db():
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+@app.middleware("http")
+async def add_cors_to_static(request: Request, call_next):
+    response = await call_next(request)
+    
+    if request.url.path.startswith("/static/"):
+        # Pega o origin da requisição
+        origin = request.headers.get("origin")
+        
+        # Verifica se está na lista de origins permitidos
+        if origin and (origin in CORS_ALLOW_ORIGIN or "*" in CORS_ALLOW_ORIGIN):
+            response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            response.headers["Access-Control-Expose-Headers"] = "Authorization" 
+            response.headers["Vary"] = "Origin"
+        elif "*" in CORS_ALLOW_ORIGIN:
+            response.headers["Access-Control-Allow-Origin"] = "*"
+    
+    return response
 
 @app.get("/cache/{path:path}")
 async def serve_cache_file(
