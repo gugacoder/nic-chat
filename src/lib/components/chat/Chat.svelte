@@ -1617,11 +1617,11 @@
 		);
 		await tick();
 
-		const stream =
-			model?.info?.params?.stream_response ??
-			$settings?.params?.stream_response ??
-			params?.stream_response ??
-			true;
+		const stream = false;
+			// model?.info?.params?.stream_response ??
+			// $settings?.params?.stream_response ??
+			// params?.stream_response ??
+			// false;
 
 		let messages = [
 			params?.system || $settings.system
