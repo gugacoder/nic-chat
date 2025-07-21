@@ -14,7 +14,10 @@
 
 	const defaultParams = {
 		// Advanced
-		stream_response: null, // Set stream responses for this model individually
+
+		// TODO: FIXME: Temporariamente o valor stream está desativado para usar LMM criada no n8n
+		stream_response: false, // Set stream responses for this model individually
+
 		function_calling: null,
 		seed: null,
 		stop: null,
